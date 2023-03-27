@@ -19,7 +19,7 @@ const questions = [
     {
         type: "input",
         name: "description",
-        message: "Please enter a description of your project.",
+        message: "Please enter a description of your project:",
         validate: validateInput,
     },
 
@@ -27,7 +27,7 @@ const questions = [
     {
         type: "input",
         name: "installation",
-        message: "Please enter an explanation how to install the software, or commands for the program.",
+        message: "Please enter an explanation how to install the software, or commands for the program:",
         validate: validateInput,
     },
 
@@ -35,7 +35,7 @@ const questions = [
     {
         type: "input",
         name: "usage",
-        message: "Please describe how we can use this program/project.",
+        message: "Please describe how we can use this program/project:",
         validate: validateInput,
     },
 
@@ -52,7 +52,7 @@ const questions = [
     {
         type: "input",
         name: "contributing",
-        message: "How can users contribute to your project.",
+        message: "How can users contribute to your project:",
         validate: validateInput,
     },
 
@@ -60,7 +60,7 @@ const questions = [
     {
         type: "input",
         name: "tests",
-        message: "Please enter any testing instructions you would like to provide for this project.",
+        message: "Please enter any testing instructions you would like to provide for this project:",
         validate: validateInput,
     },
 
@@ -81,7 +81,7 @@ const questions = [
             if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
                 return true;
             } else {
-                return "Not a valid email address. Please enter a valid email address.";
+                return "Not a valid email address. Please enter a valid email address:";
             }
         },
     },
@@ -94,10 +94,12 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then((inquirerResponses) => {
-        console.log('Generating README...');
+    inquirer.prompt(questions)
+        .then((inquirerResponses) => {
+        console.log('Generating custom README...');
         writeToFile('README.md', generateMarkdown({ ...inquirerResponses }));
-      });    
+      })
+        .catch(err => console.log(err));    
 }
 
 // Function call to initialize app
