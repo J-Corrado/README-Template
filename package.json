@@ -1,19 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "static-site",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "inquirer": "8.2.4"
-  }
-}
-=======
     "name": "static-site",
     "version": "1.0.0",
     "main": "index.js",
@@ -29,4 +14,3 @@
     "description": ""
   }
   
->>>>>>> 1a9fb73397973aef07c20a09c6992909b14d3cac
